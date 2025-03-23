@@ -4,11 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="colorful-heart.css">
-    <title>Document</title>
+    <title>Colorful Heart with Audio and Glowing Image</title>
+    <style>
+      /* Center the image */
+      .center-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px; /* Adjust the size of the image */
+        height: 100px; /* Adjust the size of the image */
+        border-radius: 50%; /* Make the image circular */
+        z-index: 1; /* Ensure the image is above the canvas */
+        box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5); /* Glowing shadow */
+        animation: glowRotate 15s linear infinite; /* Glow and rotate animation */
+      }
+
+      /* Glow and rotate animation */
+      @keyframes glowRotate {
+        0% {
+          box-shadow: 0 0 20px 10px rgba(255, 0, 0, 0.5); /* Red glow */
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        25% {
+          box-shadow: 0 0 20px 10px rgba(0, 255, 0, 0.5); /* Green glow */
+        }
+        50% {
+          box-shadow: 0 0 20px 10px rgba(0, 0, 255, 0.5); /* Blue glow */
+        }
+        75% {
+          box-shadow: 0 0 20px 10px rgba(255, 255, 0, 0.5); /* Yellow glow */
+        }
+        100% {
+          box-shadow: 0 0 20px 10px rgba(255, 0, 255, 0.5); /* Purple glow */
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+    </style>
   </head>
   <body>
-    <!-- credit to the writter Riaz Laskar -->
+    <!-- credit to the writer Riaz Laskar -->
     <canvas width="300" height="300" style="width:100%;height:100vh;" id="c"></canvas>
+
+    <!-- Image at the center of the heart -->
+    <img src="may.png" alt="Center Image" class="center-image" style="object-fit: cover;">
+    <!-- <img src="us.jpg" alt="Center Image" class="center-image" style="object-fit: cover;"> -->
+
+    <!-- Audio Element -->
+    <audio controls autoplay loop>
+      <source src="teamo.mp3" type="audio/mpeg">
+      <source src="your-audio-file.ogg" type="audio/ogg">
+      Your browser does not support the audio element.
+    </audio>
+
     <script src="colorful-heart.js"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-html,body{
+html, body {
   border: 0;
   padding: 0;
   margin: 0;
@@ -6,13 +6,24 @@ html,body{
   background: #000;
 }
 
-.info{
-z-index:999;
-position : absolute;
-left:0;
-top:0;
-padding:10px;
-color:#fff;
-background: rgba(0,0,0,0.5);
-text-transform:capitalize;
+.info {
+  z-index: 999;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 10px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  text-transform: capitalize;
+}
+
+.center-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px; /* Adjust the size of the image */
+  height: 100px; /* Adjust the size of the image */
+  border-radius: 50%; /* Optional: Make the image circular */
+  z-index: 1; /* Ensure the image is above the canvas */
 }
